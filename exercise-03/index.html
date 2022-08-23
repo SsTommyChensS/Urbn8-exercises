@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+.container {
+    /*Set width and height of Container*/
+    width: 100px;
+    height: 100px;
+    /*Set color of Container to red*/
+    background-color: red;
+    /*Set the shape of Container to Circle*/
+    border-radius: 50%;
+    /*Set the position of Elements inside the Container to center (both horizontal and vertical)*/
+    display: flex;
+    align-items: center; /*vertical*/
+    justify-content: center; /*horizontal*/
+    /*Set the position of Container to center of the browser*/
+    position: fixed;
+    top:  50%;
+    left:  50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    color: yellow;
+    text-decoration: underline;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <span class="box">
+        Box
+    </span>
+</div>
+<script>
+var api = function(result){
+    console.log('result:', result);
+    var api2 = function(result2 = result + 1) {
+        console.log('result2:', result2);
+        var api3 = function(result3 = result2 + 1) {
+            console.log('result3:', result3);
+        }
+        api3();
+    }
+    api2();
+}
+api(1);
+</script>
+</body>
+</html>
